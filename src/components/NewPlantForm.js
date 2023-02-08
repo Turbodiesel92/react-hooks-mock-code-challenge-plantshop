@@ -28,7 +28,7 @@ function NewPlantForm( {handlePost} ) {
       image: image,
       price: parseInt(price),
     }
-  }
+
 
   fetch('http://localhost:6001/plants', {
     method: 'POST',
@@ -39,11 +39,10 @@ function NewPlantForm( {handlePost} ) {
     body: JSON.stringify(newPlant),
   })
     .then(response => response.json())
-    .then(response => handlePost(response))
+    .then(newPlant => handlePost(newPlant))
 
-    handlePost(newPlant)
-
-
+    // handlePost(newPlant)
+  }
 
 
 

@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "test",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ikea.com%2Fus%2Fen%2Fp%2Ffejka-artificial-potted-plant-indoor-outdoor-monstera-40395288%2F&psig=AOvVaw0XQy62wfo4ERZzr4IljqfJ&ust=1675959099926000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCMiHw6mohv0CFQAAAAAdAAAAABAG",
+      "price": 10,
+      "id": 8
     }
   ]
 }

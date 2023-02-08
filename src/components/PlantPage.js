@@ -14,6 +14,10 @@ useEffect(() => {
     .then(plantsList => setPlantList(plantsList))
 })
 
+function handlePost() {
+
+}
+
   return (
     <main>
       <NewPlantForm />
@@ -26,6 +30,7 @@ useEffect(() => {
 export default PlantPage;
 
 
+// need to have handlePost function here
 
 
 
