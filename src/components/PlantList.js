@@ -1,25 +1,19 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({plantList}) {
+function PlantList({ plants }) {
+  const plantCards = plants.map((plant) => {
+    return (
+      <PlantCard
+        key={plant.id}
+        name={plant.name}
+        image={plant.image}
+        price={plant.price}
+      />
+    );
+  });
 
-const plantCards = plantList.map((plant) => {
-  return (
-    <PlantCard
-      key={plant.id}
-      name={plant.name}
-      image={plant.image}
-      price={plant.price}
-    />
-  )
-})
-
-  return (
-    <ul className="cards">
-      {plantCards}
-    </ul>
-  );
+  return <ul className="cards">{plantCards}</ul>;
 }
 
 export default PlantList;
-

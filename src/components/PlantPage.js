@@ -4,38 +4,30 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
+  const [plants, setPlants] = useState([]);
+  const [search, setSearch] = useState('')
 
+  useEffect(() => {
+    fetch("http://localhost:6001/plants")
+      .then((response) => response.json())
+      .then((plants) => setPlants(plants));
+  }, []);
 
-const [plantList, setPlantList] = useState([])
+  function handlePost(newPlants) {
+    setPlants([...plants, newPlants]);
+  }
 
-useEffect(() => {
-  fetch('http://localhost:6001/plants')
-    .then(response => response.json())
-    .then(plantsList => setPlantList(plantsList))
-})
-
-function handlePost() {
-
-}
+  const filteredPlantArray = plants.filter((plant) => {
+    return plant.name.toLowerCase().includes(search.toLowerCase())
+  })
 
   return (
     <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList plantList = {plantList} />
+      <NewPlantForm handlePost={handlePost} />
+      <Search setSearch={setSearch} />
+      <PlantList plants={filteredPlantArray} />
     </main>
   );
 }
 
 export default PlantPage;
-
-
-// need to have handlePost function here
-
-
-
-
-
-
-
-
